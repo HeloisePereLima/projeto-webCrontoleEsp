@@ -48,6 +48,15 @@ export default function TelaLed(){
             </div> 
             <button className="bg-sky-500 text-white px-4 py-2 rounded gap-50" onClick={() => enviarComando("Ligado")}> Ligar</button>
             <button className="bg-red-700 text-white px-4 py-2 rounded gap-10" onClick={() => enviarComando("Desligado")}> Desligar</button>
+             <div className="flex justify-center mt-4">
+                <a href="https://wokwi.com/projects/438735697622916097"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-green-600 rounded text-white"
+                >
+                    Acessar Wokwi
+                </a>
+            </div>
         </div>
     )
 }

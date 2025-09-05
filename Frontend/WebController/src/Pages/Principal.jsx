@@ -2,6 +2,10 @@ import React, {useState} from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import TelaLed from './TelaLed';
 import BoiaStatus from './BoiaStatus';
+import SensorDHT from './SensorDHT';
+import TelaSolo from './TelaSolo'
+import IrrigacaoAutomaticao from './irrigacaoAutomatica'
+import MonitorChuva from './monitorChuva';
 
 
 export default function Principal(){
@@ -26,7 +30,23 @@ export default function Principal(){
                     </Link>
                     <Link to="/BoiaStatus" onClick={() => setMenuAberto(false)} 
                     className='flex items-center gap-4 p-2 rounded hover:bg-gray-700'>
-                        <span>Status Boia</span>
+                        <span>Tela Boia</span>
+                    </Link>
+                    <Link to="/SensorDHT" onClick={() => setMenuAberto(false)} 
+                    className='flex items-center gap-4 p-2 rounded hover:bg-gray-700'>
+                        <span>Tela Temp e Umid</span>
+                    </Link>
+                    <Link to="/TelaSolo" onClick={() => setMenuAberto(false)} 
+                    className='flex items-center gap-4 p-2 rounded hover:bg-gray-700'>
+                        <span>Tela Solo</span>
+                    </Link>
+                    <Link to="/monitorChuva" onClick={() => setMenuAberto(false)} 
+                    className='flex items-center gap-4 p-2 rounded hover:bg-gray-700'>
+                        <span>Tela Monitor Chuva</span>
+                    </Link>
+                    <Link to="/irrigacaoAutomatica" onClick={() => setMenuAberto(false)} 
+                    className='flex items-center gap-4 p-2 rounded hover:bg-gray-700'>
+                        <span>Tela  irrigação Automatica</span>
                     </Link>
                 </nav>
             </section>
@@ -41,6 +61,10 @@ export default function Principal(){
                     <Routes>
                         <Route path='/TelaLed' element={<TelaLed/>}/>
                         <Route path='/BoiaStatus' element={<BoiaStatus/>}/>
+                        <Route path='/SensorDHT' element={<SensorDHT/>}/>
+                        <Route path='/TelaSolo' element={<TelaSolo/>}/>
+                        <Route path='/MonitorChuva' element={<MonitorChuva/>}/>
+                        <Route path='/IrrigacaoAutomatica' element={<IrrigacaoAutomaticao/>}/>
                     </Routes>
                 </main>
             </section>

@@ -10,6 +10,13 @@ const MQTT_PASSWORD = 'TesteSenai1';
 const TOPICO_STATUS = 'aulaLed/09/status';
 const TOPICO_COMANDO_LED = 'aulaLed/09/estadoLed';
 const STATUS_BOIA = "projeto/09/statusBoia";
+// const STATUS_DHT = "projeto/09/statusDHT"
+const UMIDADE = "projeto/09/umidade"
+const TEMPERATURA = "projeto/09/temperatura"
+const SENSOR_SOLO = "projeto/09/sensor_solo"
+const CONDICAO_SOLO = "projeto/09/condicao_solo"
+
+const status_monitorChuva = "projeto/09/statusMonitorChuva"
 
 let mqttClient;
 let subscriptions = {};
@@ -47,6 +54,42 @@ function conectarMqtt(){
                 console.log(`Inscrito no tópico ${STATUS_BOIA}`);
             }
         })
+        //  mqttClient.subscribe(STATUS_DHT, (err) =>{
+        //     if(!err)
+        //     {
+        //         console.log(`Inscrito no tópico ${STATUS_DHT}`);
+        //     }
+        // })
+         mqttClient.subscribe(UMIDADE, (err) =>{
+            if(!err)
+            {
+                console.log(`Inscrito no tópico ${UMIDADE}`);
+            }
+        })
+         mqttClient.subscribe(TEMPERATURA, (err) =>{
+            if(!err)
+            {
+                console.log(`Inscrito no tópico ${TEMPERATURA}`);
+            }
+        })
+         mqttClient.subscribe(SENSOR_SOLO, (err) =>{
+            if(!err)
+            {
+                console.log(`Inscrito no tópico ${SENSOR_SOLO}`);
+            }
+        })
+         mqttClient.subscribe(CONDICAO_SOLO, (err) =>{
+            if(!err)
+            {
+                console.log(`Inscrito no tópico ${CONDICAO_SOLO}`);
+            }
+        })
+         mqttClient.subscribe(status_monitorChuva, (err) =>{
+            if(!err)
+            {
+                console.log(`Inscrito no tópico ${status_monitorChuva}`);
+            }
+        })
     })
     mqttClient.on('message', (topic, message) =>{
         //verificarse existe um topico na lista de assinaturas 
@@ -73,5 +116,5 @@ function publicar(topic, message){
 
 conectarMqtt();
 
-export{publicar, onMessage, TOPICO_STATUS, TOPICO_COMANDO_LED, STATUS_BOIA}
+export{publicar, onMessage, TOPICO_STATUS, TOPICO_COMANDO_LED, STATUS_BOIA, UMIDADE, TEMPERATURA, CONDICAO_SOLO, SENSOR_SOLO}
 

@@ -34,6 +34,15 @@ export default function BoiaStatus(){
                 ) : (<span className="text-blue-600">BAIXO</span>)
                 }
             </p>
+             <div className="flex justify-center mt-4">
+                <a href="https://wokwi.com/projects/439347554466649089"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-green-600 rounded text-white"
+                >
+                    Acessar Wokwi
+                </a>
+            </div>
         </div>
     )
 }
